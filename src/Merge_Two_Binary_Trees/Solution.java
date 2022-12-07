@@ -3,23 +3,22 @@ package Merge_Two_Binary_Trees;
 // my solution
 class Solution {
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-        if(root1 != null && root2 != null){
-            root1.val += root2.val;
-            mergeTrees(root1.left, root2.left);
-            mergeTrees(root1.right, root2.right);
-        }
+        TreeNode nnode = null;
+
+
         if(root1 == null && root2 != null){
-            root1 = new TreeNode(root2.val);
-            mergeTrees(root1.left, root2.left);
-            mergeTrees(root1.right, root2.right);
+            return root2;
         }
         else if(root1 != null && root2 == null){
             return root1;
         }
-        else if(root1 == null && root2 == null){
-            return null;
+
+        if(root1 != null && root2 != null){
+            nnode = new TreeNode(root1.val+ root2.val);
+            nnode.left = mergeTrees(root1.left, root2.left);
+            nnode.right = mergeTrees(root1.right,root2.right);
         }
-        return null;
+        return nnode;
     }
 }
 class TreeNode {
