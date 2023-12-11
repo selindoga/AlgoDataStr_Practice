@@ -32,7 +32,7 @@ public class Solution {
             return head.next;
         }
 
-        if(nodeNo%2 == 0){
+        if(nodeNo % 2 == 0){
             while(last.next != null){
                 if(last.next.next != null){
                     last = last.next.next;

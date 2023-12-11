@@ -1,6 +1,4 @@
 package Kick_Start_Practice_2;
-
-
 import java.util.Scanner;
 
 public class SampleProblem {
